@@ -44,6 +44,7 @@ export default function App() {
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId)
+
     if (selectedProduct && sectionId !== "consultar") {
       setSelectedProduct(null)
       setTimeout(() => {
@@ -56,27 +57,40 @@ export default function App() {
 
   const handleAddToCart = (item: CartItem) => {
     setCartItems((prev) => {
-      const idx = prev.findIndex(i => i.productName === item.productName && i.medida === item.medida)
+      const idx = prev.findIndex(
+        (i) =>
+          i.productName === item.productName &&
+          i.medida === item.medida &&
+          i.categoryLabel === item.categoryLabel
+      )
+
       if (idx >= 0) {
         const updated = [...prev]
-        updated[idx] = { ...updated[idx], cantidad: updated[idx].cantidad + 1 }
+        updated[idx] = {
+          ...updated[idx],
+          cantidad: updated[idx].cantidad + item.cantidad,
+        }
         return updated
       }
+
       return [...prev, item]
     })
   }
 
   const handleRemoveFromCart = (index: number) => {
-    setCartItems(prev => prev.filter((_, i) => i !== index))
+    setCartItems((prev) => prev.filter((_, i) => i !== index))
   }
 
   const handleChangeQty = (index: number, delta: number) => {
-    setCartItems(prev => prev.map((item, i) =>
-      i === index ? { ...item, cantidad: Math.max(1, item.cantidad + delta) } : item
-    ))
+    setCartItems((prev) =>
+      prev.map((item, i) =>
+        i === index
+          ? { ...item, cantidad: Math.max(1, item.cantidad + delta) }
+          : item
+      )
+    )
   }
 
-  // ── Detail view: Hero + product sidebar + product detail
   if (selectedProduct) {
     return (
       <div className="min-h-screen bg-white">
@@ -95,13 +109,18 @@ export default function App() {
     )
   }
 
-  // ── Normal site
   return (
     <div className="min-h-screen bg-gray-50">
       <Header activeSection={activeSection} onNavigate={scrollToSection} />
       <main>
-        <section id="home"><Hero /></section>
-        <section id="sobre-nosotros"><About /></section>
+        <section id="home">
+          <Hero />
+        </section>
+
+        <section id="sobre-nosotros">
+          <About />
+        </section>
+
         <section id="consultar">
           <Products
             cartItems={cartItems}
