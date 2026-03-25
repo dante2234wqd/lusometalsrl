@@ -1,6 +1,6 @@
 "use client"
 
-import { Mail, Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Phone, MapPin, Facebook, Instagram, Linkedin } from "lucide-react"
 
 interface FooterProps {
   onNavigate: (section: string) => void
@@ -38,10 +38,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => onNavigate("sobre-nosotros")}
-                  className="hover:text-orange-500 transition-colors"
-                >
+                <button onClick={() => onNavigate("sobre-nosotros")} className="hover:text-orange-500 transition-colors">
                   Sobre Nosotros
                 </button>
               </li>
@@ -71,18 +68,12 @@ export function Footer({ onNavigate }: FooterProps) {
             <ul className="space-y-3">
               <li className="flex items-start gap-2">
                 <MapPin size={20} className="flex-shrink-0 mt-1" />
-                <span>Av. Cobo 1856, C1406ILQ Cdad. Autónoma de Buenos Aires</span>
+                <span>Av. Cobo 1856, CABA</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={20} className="flex-shrink-0" />
-                <a href="tel:+5491123456789" className="hover:text-orange-500 transition-colors">
-                  +54 9 11 2345-6789
-                </a>
-              </li>
-              <li className="flex items-center gap-2">
-                <Mail size={20} className="flex-shrink-0" />
-                <a href="mailto:info@lusometal.com" className="hover:text-orange-500 transition-colors">
-                  info@lusometal.com
+                <a href="tel:+5491128960096" className="hover:text-orange-500 transition-colors">
+                  +54 9 11 2896-0096
                 </a>
               </li>
             </ul>
@@ -90,7 +81,7 @@ export function Footer({ onNavigate }: FooterProps) {
         </div>
 
         <div className="border-t border-gray-800 pt-8 text-center">
-          <p>&copy; 2025 LUSOMETAL SRL. Todos los derechos reservados.</p>
+          <p>&copy; 2026 LUSOMETAL SRL. Todos los derechos reservados.</p>
           <p className="text-sm mt-2 text-gray-500">
             Diseñada y autorizada por{" "}
             <a

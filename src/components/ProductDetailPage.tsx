@@ -20,7 +20,7 @@ const CATEGORY_IMAGES: Record<string, string> = {
   "Discos de Desbaste": "/images/DISCO TYROLIT 114x4,8x22,2 Desbaste Inox - FE_11zon.webp",
   "Discos Flaps": "/images/FLAP TYROLIT CONVEXO 115 G40 ECO BASIC_11zon.webp",
   "Cerraduras": "/images/Cerradura_Caja_cerradura_175x77x25_11zon.webp",
-  "Electrodos": "/images/corte_moladora_2_años.webp",
+  "Electrodos": "/images/electrodos.webp",
   "Tornillos y Tarugos": "/images/T1 Tornillo 8x1 (4,2x25.4)Flangeado punta mecha zinc bl_11zon.webp",
   "Varillas Roscadas": "/images/Varilla Roscada 1 x 1000mm Zincada_11zon.webp",
   "Alambres": "/images/Alambre de negro Recocido N 8 (4.06mm)_11zon.webp",
@@ -53,7 +53,7 @@ const CATEGORY_IMAGES: Record<string, string> = {
   "Ángulos": "/images/angulo_hierro_11zon.webp",
   "Planchuelas": "/images/planchuelas_11zon.webp",
   "Planchuelas Perforadas": "/images/planchuelas_11zon.webp",
-  "Perfiles T": "/images/perfiles_ipn_11zon.webp",
+  "Perfiles T": "/images/perfiles_t.webp",
   "Perfiles C Galvanizados": "/images/perfiles_c_galvanizados_11zon.webp",
   "Perfiles C Negro LC": "/images/perfiles_c_negro_LC_11zon.webp",
   "Perfiles U": "/images/perfiles_u_chapa_11zon.webp",
@@ -65,17 +65,41 @@ const CATEGORY_IMAGES: Record<string, string> = {
   "Metal Desplegado": "/images/Guía_para_piso.webp",
 }
 
+// Lightbox: imagen siempre centrada en pantalla sin scroll
 function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose() }
     window.addEventListener("keydown", handler)
-    return () => window.removeEventListener("keydown", handler)
+    document.body.style.overflow = "hidden"
+    return () => {
+      window.removeEventListener("keydown", handler)
+      document.body.style.overflow = ""
+    }
   }, [onClose])
+
   return (
-    <div className="fixed inset-0 z-[70] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4" onClick={onClose}>
-      <div className="relative max-w-3xl w-full" onClick={e => e.stopPropagation()}>
-        <button onClick={onClose} className="absolute -top-3 -right-3 bg-white rounded-full p-1.5 shadow-lg text-gray-700 hover:text-gray-900 z-10"><X size={18} /></button>
-        <img src={src} alt={alt} className="w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl" />
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4"
+      onClick={onClose}
+      style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0 }}
+    >
+      <div
+        className="relative w-full max-w-3xl"
+        onClick={e => e.stopPropagation()}
+        style={{ maxHeight: "90vh" }}
+      >
+        <button
+          onClick={onClose}
+          className="absolute -top-3 -right-3 bg-white rounded-full p-1.5 shadow-lg text-gray-700 hover:text-gray-900 z-10"
+        >
+          <X size={18} />
+        </button>
+        <img
+          src={src}
+          alt={alt}
+          className="w-full rounded-2xl shadow-2xl object-contain"
+          style={{ maxHeight: "85vh" }}
+        />
       </div>
     </div>
   )
@@ -192,7 +216,15 @@ function CartPanel({ items, onClose, onRemove, onChangeQty }: {
   items: CartItem[]; onClose: () => void; onRemove: (i: number) => void; onChangeQty: (i: number, d: number) => void
 }) {
   const send = () => {
-    const lines = ["Hola! Quiero consultar por los siguientes materiales:", "", ...items.map((item, i) => `${i + 1}. *${item.productName}*\n   📐 ${item.medida}\n   📦 ${item.categoryLabel}\n   🔢 Cantidad: ${item.cantidad}`), "", "¿Podrían enviarme precio y disponibilidad? Gracias!"]
+    const lines = [
+      "Hola! Quiero consultar por los siguientes materiales:",
+      "",
+      ...items.map((item, i) =>
+        `${i + 1}. *${item.productName}*\n   📐 ${item.medida}\n   📦 ${item.categoryLabel}\n   🔢 Cantidad: ${item.cantidad}`
+      ),
+      "",
+      "¿Podrían enviarme precio y disponibilidad? Gracias!",
+    ]
     window.open(`https://wa.me/${WA}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank")
   }
   return (
@@ -340,6 +372,39 @@ function MobileProductList({ currentProduct, onSelect }: { currentProduct: Produ
   )
 }
 
+// Botón flotante de WhatsApp con ícono SVG y pastilla de texto
+function WhatsAppFAB() {
+  return (
+    <a
+      href={`https://wa.me/${WA}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center gap-0 group"
+      aria-label="Consultá tu presupuesto por WhatsApp"
+    >
+      {/* Pastilla de texto — aparece al hover en desktop, siempre visible en mobile */}
+      <span className="
+        mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg
+        whitespace-nowrap
+        opacity-0 translate-x-2 pointer-events-none
+        group-hover:opacity-100 group-hover:translate-x-0
+        transition-all duration-200
+        sm:block hidden
+      ">
+        Consultá tu presupuesto
+      </span>
+      {/* Pastilla siempre visible en mobile */}
+      <span className="sm:hidden mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap">
+        Consultá tu presupuesto
+      </span>
+      {/* Ícono WhatsApp */}
+      <div className="w-14 h-14 rounded-full shadow-xl flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] transition-colors shrink-0">
+        <img src="/images/icono_whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
+      </div>
+    </a>
+  )
+}
+
 export function ProductDetailPage({
   product, cartItems, onSelectProduct, onAddToCart, onRemoveFromCart, onChangeQty,
 }: {
@@ -356,7 +421,7 @@ export function ProductDetailPage({
 
   const measureData = product.measureCategories && product.measureCategories.length > 0 ? product.measureCategories : null
   const getWhatsAppMessage = () =>
-    encodeURIComponent(`Hola, me interesa consultar sobre *${product.name}*\n\n${product.description}\n\n¿Me pueden brindar precio y disponibilidad?\n\nGracias!`)
+    encodeURIComponent(`Hola, me interesa consultar sobre *${product.name}*.\n\n¿Me pueden brindar precio y disponibilidad?\n\nGracias!`)
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -442,7 +507,7 @@ export function ProductDetailPage({
         </div>
       </div>
 
-      {/* Cart button — bottom-24 so it stays above WhatsApp (bottom-6) */}
+      {/* Carrito — bottom-24 para que quede encima del botón de WhatsApp */}
       {cartItems.length > 0 && (
         <button onClick={() => setCartOpen(true)}
           className="fixed bottom-24 right-4 sm:bottom-24 sm:right-6 z-40 bg-gray-900 text-white rounded-full px-4 sm:px-5 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 shadow-2xl hover:bg-gray-800 transition-all border border-white/10">
@@ -453,6 +518,9 @@ export function ProductDetailPage({
       )}
 
       {cartOpen && <CartPanel items={cartItems} onClose={() => setCartOpen(false)} onRemove={onRemoveFromCart} onChangeQty={onChangeQty} />}
+
+      {/* Botón flotante WhatsApp */}
+      <WhatsAppFAB />
     </div>
   )
 }

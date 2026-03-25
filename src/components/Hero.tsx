@@ -3,6 +3,8 @@
 import { ArrowRight, X, Send, User, Phone, Building2, MessageSquare } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
+const WA = "5491128960096"
+
 interface HeroProps {
   compact?: boolean
 }
@@ -35,13 +37,15 @@ export function Hero({ compact = false }: HeroProps) {
   const handleWhatsAppSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     const lines = [
-      "Hola, quiero solicitar una cotización.", "",
+      "Hola, quiero solicitar una cotización.",
+      "",
       `👤 Nombre: ${formData.nombre}`,
       formData.empresa ? `🏭 Empresa: ${formData.empresa}` : "",
-      `📱 Teléfono: ${formData.telefono}`, "",
+      `📱 Teléfono: ${formData.telefono}`,
+      "",
       `📋 Consulta: ${formData.mensaje}`,
     ].filter(l => l !== undefined).join("\n")
-    window.open(`https://wa.me/5491112345678?text=${encodeURIComponent(lines)}`, "_blank")
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(lines)}`, "_blank")
   }
 
   return (
@@ -51,12 +55,18 @@ export function Hero({ compact = false }: HeroProps) {
         compact ? "min-h-[60vh]" : "min-h-[90vh]"
       }`}
     >
-      {/* Background */}
+      {/* Background — desktop */}
       <div className="absolute inset-0">
         <img
           src="/images/background_hero.webp"
           alt="Materiales siderometalúrgicos Lusometal"
-          className="w-full h-full object-cover opacity-40"
+          className="hidden sm:block w-full h-full object-cover opacity-40"
+        />
+        {/* Background — mobile */}
+        <img
+          src="/images/background_mobile.webp"
+          alt="Materiales siderometalúrgicos Lusometal"
+          className="sm:hidden w-full h-full object-cover opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/60 to-transparent" />
       </div>
@@ -68,7 +78,6 @@ export function Hero({ compact = false }: HeroProps) {
             Más de 20 años de experiencia · Stock permanente
           </p>
 
-          {/* H1 — three lines: "Materiales siderometalúrgicos" / "para obras, industrias" / "y herrería" */}
           <h1
             className={`font-black text-white leading-[1.1] mb-6 ${
               compact ? "text-4xl sm:text-5xl" : "text-4xl sm:text-5xl lg:text-[3.5rem]"

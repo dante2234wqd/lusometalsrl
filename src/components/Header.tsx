@@ -1,6 +1,6 @@
 "use client"
 
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
 interface HeaderProps {
@@ -12,33 +12,24 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [visible, setVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-  // "dark" = glass over dark bg, "light" = solid dark pill over light bg
   const [bgMode, setBgMode] = useState<"dark" | "light">("dark")
   const headerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const detectBackground = () => {
-      // Sample the pixel color at the center-top of the page at the header's Y position
-      const y = 60 // approximate center of the header pill
+      const y = 60
       const x = window.innerWidth / 2
-
-      // We use document.elementFromPoint to find what element is behind the header
-      // then check its computed background color
       const el = document.elementFromPoint(x, y) as HTMLElement | null
       if (!el) return
-
-      // Walk up until we find an element with a non-transparent bg
       let current: HTMLElement | null = el
       while (current && current !== document.body) {
         const bg = window.getComputedStyle(current).backgroundColor
         if (bg && bg !== "rgba(0, 0, 0, 0)" && bg !== "transparent") {
-          // Parse rgb values
           const match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/)
           if (match) {
             const r = parseInt(match[1])
             const g = parseInt(match[2])
             const b = parseInt(match[3])
-            // Perceived brightness
             const brightness = (r * 299 + g * 587 + b * 114) / 1000
             setBgMode(brightness > 160 ? "light" : "dark")
             return
@@ -46,7 +37,6 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
         }
         current = current.parentElement
       }
-      // Fallback: check scroll position — hero is dark, other sections may be light
       setBgMode(window.scrollY < 100 ? "dark" : "light")
     }
 
@@ -119,14 +109,6 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
               </button>
             ))}
           </nav>
-
-          <a
-            href="tel:+5491112345678"
-            className="bg-orange-600 hover:bg-orange-500 text-white px-5 py-2.5 rounded-full flex items-center gap-2 transition-all duration-200 text-sm font-medium shrink-0 shadow-lg shadow-orange-900/30"
-          >
-            <Phone size={16} />
-            <span>+54 11 1234-5678</span>
-          </a>
         </div>
       </header>
 
@@ -157,10 +139,6 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
                 {item.label}
               </button>
             ))}
-            <a href="tel:+5491112345678" className="flex items-center gap-2 w-full bg-orange-600 text-white px-4 py-2.5 rounded-xl text-sm font-medium">
-              <Phone size={16} />
-              +54 11 1234-5678
-            </a>
           </div>
         )}
       </header>

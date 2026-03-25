@@ -104,7 +104,7 @@ export const products: Product[] = [
   {
     id: 10, name: "Perfiles T", category: "estructurales",
     description: "Perfiles en T para estantes, soportes y estructuras metálicas",
-    image: "/images/perfiles_ipn_11zon.webp",
+    image: "/images/perfiles_t.webp",
     details: { fullDescription: "Perfiles en forma de T para soportes, estantes, rieles y estructuras metálicas.", dimensions: "Varios anchos y espesores", materials: "Acero al carbono | Laminado", finishes: "Natural", weight: "Variable", specifications: ["Medidas en pulgadas y mm", "Stock disponible"], applications: ["Soportes", "Estantes", "Rieles", "Estructuras"] },
     measureCategories: measures_perfiles.filter(c => c.label === "Perfiles T"),
   },
@@ -222,7 +222,7 @@ export const products: Product[] = [
   {
     id: 26, name: "Electrodos de Soldadura", category: "accesorios",
     description: "Electrodos Conarco para soldadura eléctrica manual en acero común y estructural",
-    image: "/images/corte_moladora_2_años.webp",
+    image: "/images/electrodos.webp",
     details: { fullDescription: "Electrodos Conarco para soldadura por arco eléctrico.", dimensions: "Diámetros 2mm a 4mm", materials: "Acero bajo hidrógeno / 6013", finishes: "Revestido", weight: "Por caja o paquete", specifications: ["Marca Conarco", "Varios diámetros"], applications: ["Soldadura general", "Estructuras", "Herrería", "Mantenimiento"] },
     measureCategories: measures_ferreteria.filter(c => c.label === "Electrodos"),
   },
@@ -256,7 +256,6 @@ function useReveal(delay = 0) {
   return { ref, visible }
 }
 
-// Card con flex column y button al fondo — botones siempre a la misma altura
 function ProductCard({ product, index, onSelect }: { product: Product; index: number; onSelect: () => void }) {
   const { ref, visible } = useReveal(index * 40)
   return (
@@ -267,7 +266,6 @@ function ProductCard({ product, index, onSelect }: { product: Product; index: nu
           {categories.find(c => c.id === product.category)?.name}
         </span>
       </div>
-      {/* flex-1 makes this grow so button is always at bottom */}
       <div className="p-4 sm:p-5 flex flex-col flex-1">
         <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 line-clamp-2">{product.name}</h3>
         <p className="text-gray-500 text-xs sm:text-sm mb-3 line-clamp-2 flex-1">{product.description}</p>
@@ -288,7 +286,7 @@ function GoogleMap() {
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-gray-900 text-sm font-semibold">Lusometal SRL</p>
-          <p className="text-gray-500 text-xs truncate">Av. Cobo 1856, C1406ILQ — CABA, Argentina</p>
+          <p className="text-gray-500 text-xs truncate">Av. Cobo 1856, CABA</p>
         </div>
         <a href="https://maps.google.com/?q=Av.+Cobo+1856,+C1406ILQ,+Buenos+Aires,+Argentina" target="_blank" rel="noopener noreferrer"
           className="shrink-0 bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">Abrir</a>
@@ -301,7 +299,6 @@ function GoogleMap() {
   )
 }
 
-// Carrito: bottom-20 mobile (encima del WA en bottom-6), bottom-20 sm también
 function CartButton({ count, onClick }: { count: number; onClick: () => void }) {
   if (count === 0) return null
   return (
@@ -317,7 +314,15 @@ function CartPanel({ items, onClose, onRemove, onChangeQty }: {
   items: CartItem[]; onClose: () => void; onRemove: (i: number) => void; onChangeQty: (i: number, d: number) => void
 }) {
   const send = () => {
-    const lines = ["Hola! Quiero consultar por los siguientes materiales:", "", ...items.map((item, i) => `${i + 1}. *${item.productName}*\n   📐 ${item.medida}\n   📦 ${item.categoryLabel}\n   🔢 Cantidad: ${item.cantidad}`), "", "¿Podrían enviarme precio y disponibilidad? Gracias!"]
+    const lines = [
+      "Hola! Quiero consultar por los siguientes materiales:",
+      "",
+      ...items.map((item, i) =>
+        `${i + 1}. *${item.productName}*\n   📐 ${item.medida}\n   📦 ${item.categoryLabel}\n   🔢 Cantidad: ${item.cantidad}`
+      ),
+      "",
+      "¿Podrían enviarme precio y disponibilidad? Gracias!",
+    ]
     window.open(`https://wa.me/${WA}?text=${encodeURIComponent(lines.join("\n"))}`, "_blank")
   }
   return (
@@ -370,6 +375,32 @@ function CartPanel({ items, onClose, onRemove, onChangeQty }: {
   )
 }
 
+// Botón flotante de WhatsApp con ícono SVG y pastilla de texto
+function WhatsAppFAB() {
+  return (
+    <a
+      href={`https://wa.me/${WA}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center group"
+      aria-label="Consultá tu presupuesto por WhatsApp"
+    >
+      {/* Pastilla visible en mobile siempre */}
+      <span className="sm:hidden mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap">
+        Consultá tu presupuesto
+      </span>
+      {/* Pastilla en desktop solo al hover */}
+      <span className="hidden sm:block mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
+        Consultá tu presupuesto
+      </span>
+      {/* Ícono WhatsApp */}
+      <div className="w-14 h-14 rounded-full shadow-xl flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] transition-colors shrink-0">
+        <img src="/images/icono_whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
+      </div>
+    </a>
+  )
+}
+
 interface ProductsProps {
   cartItems: CartItem[]
   onSelectProduct: (product: Product) => void
@@ -392,10 +423,17 @@ export function Products({ cartItems, onSelectProduct, onAddToCart, onRemoveFrom
     return matchSearch && matchCat
   })
 
+  // Mensaje limpio sin duplicados: solo los datos que el usuario completó
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const message = [`Hola, mi nombre es ${formData.nombre}.`, `Teléfono: ${formData.telefono}`, formData.email ? `Email: ${formData.email}` : "", ``, `Mensaje: ${formData.mensaje}`].filter(Boolean).join("\n")
-    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(message)}`, "_blank")
+    const parts = [
+      `👤 Nombre: ${formData.nombre}`,
+      `📱 Teléfono: ${formData.telefono}`,
+      formData.email ? `📧 Email: ${formData.email}` : "",
+      ``,
+      `📋 Consulta: ${formData.mensaje}`,
+    ].filter(Boolean)
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(parts.join("\n"))}`, "_blank")
   }
 
   return (
@@ -476,7 +514,9 @@ export function Products({ cartItems, onSelectProduct, onAddToCart, onRemoveFrom
 
       <CartButton count={cartItems.length} onClick={() => setCartOpen(true)} />
       {cartOpen && <CartPanel items={cartItems} onClose={() => setCartOpen(false)} onRemove={onRemoveFromCart} onChangeQty={onChangeQty} />}
+
+      {/* Botón flotante WhatsApp */}
+      <WhatsAppFAB />
     </div>
   )
 }
-
