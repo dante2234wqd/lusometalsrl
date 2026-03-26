@@ -393,9 +393,9 @@ function WhatsAppFAB() {
       <span className="hidden sm:block mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
         Consultá tu presupuesto
       </span>
-      {/* Ícono WhatsApp */}
+      {/* Ícono WhatsApp — archivo SVG del proyecto */}
       <div className="w-14 h-14 rounded-full shadow-xl flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] transition-colors shrink-0">
-        <img src="/images/icono_whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
+        <img src="/icono_whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
       </div>
     </a>
   )

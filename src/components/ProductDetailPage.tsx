@@ -175,7 +175,8 @@ function MeasureTable({ productName, measureCategories, onAddToCart }: {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="bg-orange-50 border-b border-orange-100">
-                        <th className="text-left px-5 py-2.5 text-gray-700 font-semibold">Medida</th>
+                        <th className="w-10 px-2 py-2.5" />
+                        <th className="text-left px-3 py-2.5 text-gray-700 font-semibold">Medida</th>
                         <th className="text-center px-3 py-2.5 text-gray-700 font-semibold whitespace-nowrap">Kg/m</th>
                         <th className="text-center px-3 py-2.5 text-gray-700 font-semibold">Agregar</th>
                       </tr>
@@ -186,7 +187,18 @@ function MeasureTable({ productName, measureCategories, onAddToCart }: {
                         const added = addedKey === key
                         return (
                           <tr key={i} className={`border-b border-gray-100 last:border-0 ${i % 2 === 0 ? "bg-white" : "bg-gray-50/50"}`}>
-                            <td className="px-5 py-2.5 text-gray-700 text-xs sm:text-sm">{row.medida}</td>
+                            <td className="px-2 py-1.5">
+                              {catImage && (
+                                <div
+                                  onClick={() => setLightbox({ src: catImage, alt: cat.label })}
+                                  className="w-8 h-8 rounded-md overflow-hidden border border-gray-200 hover:border-orange-400 cursor-zoom-in shrink-0 transition-colors"
+                                  title="Ver imagen"
+                                >
+                                  <img src={catImage} alt={cat.label} className="w-full h-full object-cover" />
+                                </div>
+                              )}
+                            </td>
+                            <td className="px-3 py-2.5 text-gray-700 text-xs sm:text-sm">{row.medida}</td>
                             <td className="px-3 py-2.5 text-center text-gray-500 tabular-nums text-xs sm:text-sm">{row.kgPorMetro.toFixed(2)}</td>
                             <td className="px-3 py-2.5 text-center">
                               <button
@@ -397,9 +409,9 @@ function WhatsAppFAB() {
       <span className="sm:hidden mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap">
         Consultá tu presupuesto
       </span>
-      {/* Ícono WhatsApp */}
+      {/* Ícono WhatsApp — archivo SVG del proyecto */}
       <div className="w-14 h-14 rounded-full shadow-xl flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] transition-colors shrink-0">
-        <img src="/images/icono_whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
+        <img src="/icono_whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
       </div>
     </a>
   )
