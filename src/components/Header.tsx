@@ -76,7 +76,7 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
     ? "bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl shadow-black/30"
     : "bg-gray-900 border border-gray-800 shadow-2xl shadow-black/40"
 
-  const logoClass = "h-8 w-auto cursor-pointer select-none drop-shadow shrink-0 md:h-9"
+  const logoClass = "h-12 w-auto max-w-[220px] cursor-pointer select-none drop-shadow shrink-0 object-contain md:h-14 md:max-w-[280px]"
 
   const navBtnClass = (isActive: boolean) =>
     isActive
@@ -95,9 +95,9 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 hidden md:block transition-all duration-300 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none"
         }`}
-        style={{ width: "min(920px, calc(100vw - 2rem))" }}
+        style={{ width: "min(1040px, calc(100vw - 2rem))" }}
       >
-        <div className={`flex justify-between items-center px-6 py-3 rounded-full transition-all duration-300 ${pillClass}`}>
+        <div className={`flex justify-between items-center px-7 py-3 rounded-full transition-all duration-300 ${pillClass}`}>
           <button type="button" onClick={() => handleNavClick("home")} className="shrink-0" aria-label="Ir al inicio">
             <img src="/logotipo_web.svg" alt="Luso Metal SRL" className={logoClass} />
           </button>
