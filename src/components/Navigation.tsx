@@ -29,7 +29,7 @@ export function Navigation({ currentPage = "home", onNavigate = () => {} }: Navi
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl text-orange-500">MetalTech</h1>
+            <h1 className="text-xl text-[#f5c400]">MetalTech</h1>
           </div>
 
           {/* Desktop Navigation */}
@@ -40,7 +40,7 @@ export function Navigation({ currentPage = "home", onNavigate = () => {} }: Navi
                 onClick={() => handleNavigate(item.id)}
                 className={`px-3 py-2 transition-colors ${
                   currentPage === item.id
-                    ? "text-orange-500 border-b-2 border-orange-500"
+                    ? "text-[#f5c400] border-b-2 border-[#f5c400]"
                     : "text-gray-300 hover:text-white"
                 }`}
               >
@@ -69,7 +69,7 @@ export function Navigation({ currentPage = "home", onNavigate = () => {} }: Navi
                 onClick={() => handleNavigate(item.id)}
                 className={`block w-full text-left px-3 py-2 rounded-md ${
                   currentPage === item.id
-                    ? "bg-slate-800 text-orange-500"
+                    ? "bg-slate-800 text-[#f5c400]"
                     : "text-gray-300 hover:bg-slate-800 hover:text-white"
                 }`}
               >

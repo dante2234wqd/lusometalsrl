@@ -262,14 +262,14 @@ function ProductCard({ product, index, onSelect }: { product: Product; index: nu
     <div ref={ref} className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 hover:shadow-xl hover:-translate-y-1 group flex flex-col ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}>
       <div className="relative h-40 sm:h-48 overflow-hidden shrink-0">
         <img src={product.image} alt={product.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-        <span className="absolute top-2 right-2 bg-orange-600 text-white text-xs px-2 py-0.5 rounded-full font-medium leading-tight">
+        <span className="absolute top-2 right-2 bg-[#f5c400] text-gray-900 text-xs px-2 py-0.5 rounded-full font-medium leading-tight">
           {categories.find(c => c.id === product.category)?.name}
         </span>
       </div>
       <div className="p-4 sm:p-5 flex flex-col flex-1">
         <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-1.5 line-clamp-2">{product.name}</h3>
         <p className="text-gray-500 text-xs sm:text-sm mb-3 line-clamp-2 flex-1">{product.description}</p>
-        <button onClick={onSelect} className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2.5 rounded-lg transition-all font-medium flex items-center justify-center gap-2 text-sm mt-auto">
+        <button onClick={onSelect} className="w-full bg-[#f5c400] hover:bg-[#ddb000] text-white py-2.5 rounded-lg transition-all font-medium flex items-center justify-center gap-2 text-sm mt-auto">
           Ver Detalles <ChevronRight size={15} />
         </button>
       </div>
@@ -281,15 +281,15 @@ function GoogleMap() {
   return (
     <div className="flex flex-col h-full min-h-[360px] rounded-xl overflow-hidden shadow-sm border border-gray-200">
       <div className="bg-gray-50 border-b border-gray-200 px-4 py-3 flex items-center gap-3">
-        <div className="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center shrink-0">
-          <MapPin size={15} className="text-orange-600" />
+        <div className="w-8 h-8 bg-[#fff4b3] rounded-lg flex items-center justify-center shrink-0">
+          <MapPin size={15} className="text-[#f5c400]" />
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-gray-900 text-sm font-semibold">Lusometal SRL</p>
           <p className="text-gray-500 text-xs truncate">Av. Cobo 1856, CABA</p>
         </div>
         <a href="https://maps.google.com/?q=Av.+Cobo+1856,+C1406ILQ,+Buenos+Aires,+Argentina" target="_blank" rel="noopener noreferrer"
-          className="shrink-0 bg-orange-600 hover:bg-orange-500 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">Abrir</a>
+          className="shrink-0 bg-[#f5c400] hover:bg-[#ddb000] text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors">Abrir</a>
       </div>
       <iframe title="Ubicación Lusometal SRL"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.0!2d-58.4380!3d-34.6290!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb2b3e7f8e8f%3A0x1234567890abcdef!2sAv.%20Cobo%201856%2C%20C1406ILQ%20CABA%2C%20Argentina!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar"
@@ -305,7 +305,7 @@ function CartButton({ count, onClick }: { count: number; onClick: () => void }) 
     <button onClick={onClick} className="fixed bottom-24 right-4 sm:bottom-24 sm:right-6 z-40 bg-gray-900 text-white rounded-full px-4 sm:px-5 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 shadow-2xl hover:bg-gray-800 transition-all border border-white/10">
       <ShoppingCart size={18} />
       <span className="font-semibold text-sm hidden sm:inline">Ver pedido</span>
-      <span className="bg-orange-600 text-white text-xs font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center animate-pulse">{count}</span>
+      <span className="bg-[#f5c400] text-gray-900 text-xs font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center animate-pulse">{count}</span>
     </button>
   )
 }
@@ -331,9 +331,9 @@ function CartPanel({ items, onClose, onRemove, onChangeQty }: {
       <div className="absolute right-0 top-0 bottom-0 w-full max-w-sm sm:max-w-md bg-white shadow-2xl flex flex-col">
         <div className="flex items-center justify-between px-5 py-4 border-b">
           <div className="flex items-center gap-3">
-            <ShoppingCart className="text-orange-600" size={20} />
+            <ShoppingCart className="text-[#f5c400]" size={20} />
             <span className="text-base font-bold text-gray-900">Mi pedido</span>
-            <span className="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-0.5 rounded-full">{items.length}</span>
+            <span className="bg-[#fff4b3] text-[#6b5600] text-xs font-bold px-2 py-0.5 rounded-full">{items.length}</span>
           </div>
           <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full text-gray-500"><X size={18} /></button>
         </div>
@@ -345,7 +345,7 @@ function CartPanel({ items, onClose, onRemove, onChangeQty }: {
                 <div className="flex justify-between items-start mb-2">
                   <div className="flex-1 pr-2">
                     <p className="font-semibold text-gray-900 text-sm">{item.productName}</p>
-                    <p className="text-orange-600 text-xs mt-0.5">{item.categoryLabel}</p>
+                    <p className="text-[#f5c400] text-xs mt-0.5">{item.categoryLabel}</p>
                     <p className="text-gray-500 text-xs mt-1">{item.medida}</p>
                   </div>
                   <button onClick={() => onRemove(i)} className="text-gray-400 hover:text-red-500 p-1"><Trash2 size={14} /></button>
@@ -394,8 +394,9 @@ function WhatsAppFAB() {
         Consultá tu presupuesto
       </span>
       {/* Ícono WhatsApp — archivo SVG del proyecto */}
-      <div className="w-14 h-14 rounded-full shadow-xl flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] transition-colors shrink-0">
-        <img src="/icono_whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
+      <div className="relative w-14 h-14 rounded-full shadow-xl flex items-center justify-center shrink-0 animate-pulse transition-transform hover:scale-110 hover:animate-none">
+        <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" aria-hidden="true" />
+        <img src="/boton_whatsapp.svg" alt="WhatsApp" className="relative w-14 h-14" />
       </div>
     </a>
   )
@@ -451,16 +452,16 @@ export function Products({ cartItems, onSelectProduct, onAddToCart, onRemoveFrom
           <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={18} />
             <input type="text" placeholder="Buscar productos..." value={searchTerm} onChange={e => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 bg-white text-gray-900 text-sm" />
+              className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f5c400] bg-white text-gray-900 text-sm" />
           </div>
           <div className="hidden sm:block">
             <select value={selectedCategory} onChange={e => setSelectedCategory(e.target.value)}
-              className="pl-4 pr-8 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 appearance-none bg-white text-gray-900 text-sm h-full">
+              className="pl-4 pr-8 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#f5c400] appearance-none bg-white text-gray-900 text-sm h-full">
               {categories.map(cat => <option key={cat.id} value={cat.id}>{cat.name}</option>)}
             </select>
           </div>
           <button onClick={() => setFilterOpen(v => !v)}
-            className={`sm:hidden flex items-center justify-center w-12 border rounded-lg bg-white transition-colors ${filterOpen ? 'border-orange-500 text-orange-600' : 'border-gray-300 text-gray-600'}`}>
+            className={`sm:hidden flex items-center justify-center w-12 border rounded-lg bg-white transition-colors ${filterOpen ? 'border-[#f5c400] text-[#f5c400]' : 'border-gray-300 text-gray-600'}`}>
             <SlidersHorizontal size={18} />
           </button>
         </div>
@@ -469,7 +470,7 @@ export function Products({ cartItems, onSelectProduct, onAddToCart, onRemoveFrom
           <div className="sm:hidden mb-4 bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
             {categories.map(cat => (
               <button key={cat.id} onClick={() => { setSelectedCategory(cat.id); setFilterOpen(false) }}
-                className={`w-full text-left px-4 py-3 text-sm font-medium border-b border-gray-100 last:border-0 transition-colors flex items-center justify-between ${selectedCategory === cat.id ? 'bg-orange-600 text-white' : 'text-gray-700 hover:bg-gray-50'}`}>
+                className={`w-full text-left px-4 py-3 text-sm font-medium border-b border-gray-100 last:border-0 transition-colors flex items-center justify-between ${selectedCategory === cat.id ? 'bg-[#f5c400] text-gray-900' : 'text-gray-700 hover:bg-gray-50'}`}>
                 {cat.name}
                 {selectedCategory === cat.id && <span className="text-xs opacity-80">✓</span>}
               </button>
@@ -479,7 +480,7 @@ export function Products({ cartItems, onSelectProduct, onAddToCart, onRemoveFrom
 
         {!filterOpen && selectedCategory !== "all" && (
           <div className="sm:hidden mb-4">
-            <span className="bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
+            <span className="bg-[#fff4b3] text-[#6b5600] text-xs font-semibold px-3 py-1.5 rounded-full inline-flex items-center gap-1.5">
               {categories.find(c => c.id === selectedCategory)?.name}
               <button onClick={() => setSelectedCategory("all")}><X size={12} /></button>
             </span>
@@ -499,10 +500,10 @@ export function Products({ cartItems, onSelectProduct, onAddToCart, onRemoveFrom
           <p className="text-gray-600 text-center mb-6 sm:mb-8 text-sm sm:text-base">Completá el formulario y te contactamos por WhatsApp</p>
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 items-stretch">
             <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
-              <div className="relative"><User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={17} /><input type="text" value={formData.nombre} onChange={e => setFormData(p => ({ ...p, nombre: e.target.value }))} required className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 bg-white text-gray-900 text-sm" placeholder="Nombre completo" /></div>
-              <div className="relative"><Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={17} /><input type="tel" value={formData.telefono} onChange={e => setFormData(p => ({ ...p, telefono: e.target.value }))} required className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 bg-white text-gray-900 text-sm" placeholder="Teléfono" /></div>
-              <div className="relative"><Tag className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={17} /><input type="email" value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 bg-white text-gray-900 text-sm" placeholder="Email (opcional)" /></div>
-              <textarea value={formData.mensaje} onChange={e => setFormData(p => ({ ...p, mensaje: e.target.value }))} required rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-orange-500 bg-white text-gray-900 resize-none text-sm" placeholder="Describí qué producto o servicio necesitás..." />
+              <div className="relative"><User className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={17} /><input type="text" value={formData.nombre} onChange={e => setFormData(p => ({ ...p, nombre: e.target.value }))} required className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c400] bg-white text-gray-900 text-sm" placeholder="Nombre completo" /></div>
+              <div className="relative"><Phone className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={17} /><input type="tel" value={formData.telefono} onChange={e => setFormData(p => ({ ...p, telefono: e.target.value }))} required className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c400] bg-white text-gray-900 text-sm" placeholder="Teléfono" /></div>
+              <div className="relative"><Tag className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={17} /><input type="email" value={formData.email} onChange={e => setFormData(p => ({ ...p, email: e.target.value }))} className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c400] bg-white text-gray-900 text-sm" placeholder="Email (opcional)" /></div>
+              <textarea value={formData.mensaje} onChange={e => setFormData(p => ({ ...p, mensaje: e.target.value }))} required rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-[#f5c400] bg-white text-gray-900 resize-none text-sm" placeholder="Describí qué producto o servicio necesitás..." />
               <button type="submit" className="w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white py-3.5 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-lg transition-all text-sm sm:text-base">
                 <Send size={18} />Enviar por WhatsApp
               </button>

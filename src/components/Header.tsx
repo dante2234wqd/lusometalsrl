@@ -76,11 +76,11 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
     ? "bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl shadow-black/30"
     : "bg-gray-900 border border-gray-800 shadow-2xl shadow-black/40"
 
-  const logoClass = "text-white font-bold tracking-widest cursor-pointer select-none drop-shadow shrink-0"
+  const logoClass = "h-8 w-auto cursor-pointer select-none drop-shadow shrink-0 md:h-9"
 
   const navBtnClass = (isActive: boolean) =>
     isActive
-      ? "text-orange-400 bg-white/15 px-4 py-2 rounded-full text-sm font-medium"
+      ? "text-[#f5c400] bg-white/15 px-4 py-2 rounded-full text-sm font-medium"
       : `px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
           isDark
             ? "text-white/80 hover:text-white hover:bg-white/10"
@@ -98,9 +98,9 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
         style={{ width: "min(920px, calc(100vw - 2rem))" }}
       >
         <div className={`flex justify-between items-center px-6 py-3 rounded-full transition-all duration-300 ${pillClass}`}>
-          <h1 className={`text-lg ${logoClass}`} onClick={() => handleNavClick("home")}>
-            LUSO METAL SRL
-          </h1>
+          <button type="button" onClick={() => handleNavClick("home")} className="shrink-0" aria-label="Ir al inicio">
+            <img src="/logotipo_web.svg" alt="Luso Metal SRL" className={logoClass} />
+          </button>
 
           <nav className="flex items-center gap-1">
             {navItems.map((item) => (
@@ -119,9 +119,9 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
         }`}
       >
         <div className={`rounded-2xl px-4 py-3 flex justify-between items-center transition-all duration-300 ${pillClass}`}>
-          <h1 className={`text-base ${logoClass}`} onClick={() => handleNavClick("home")}>
-            LUSO METAL SRL
-          </h1>
+          <button type="button" onClick={() => handleNavClick("home")} className="shrink-0" aria-label="Ir al inicio">
+            <img src="/logotipo_web.svg" alt="Luso Metal SRL" className={logoClass} />
+          </button>
           <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="text-white/80 hover:text-white p-1">
             {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -133,7 +133,7 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`block w-full text-left px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                  activeSection === item.id ? "bg-white/15 text-orange-400" : "text-white/80 hover:bg-white/10 hover:text-white"
+                  activeSection === item.id ? "bg-white/15 text-[#f5c400]" : "text-white/80 hover:bg-white/10 hover:text-white"
                 }`}
               >
                 {item.label}

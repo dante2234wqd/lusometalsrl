@@ -74,7 +74,7 @@ export function Hero({ compact = false }: HeroProps) {
       {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 w-full">
         <div className={`max-w-2xl transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
-          <p className="text-orange-400 text-sm font-semibold tracking-widest uppercase mb-5">
+          <p className="text-[#f5c400] text-sm font-semibold tracking-widest uppercase mb-5">
             Más de 20 años de experiencia · Stock permanente
           </p>
 
@@ -86,9 +86,9 @@ export function Hero({ compact = false }: HeroProps) {
             Materiales siderometalúrgicos
             <br />
             para{" "}
-            <span className="text-orange-500">obras, industrias</span>
+            <span className="text-[#f5c400]">obras, industrias</span>
             <br />
-            <span className="text-orange-500">y herrería</span>
+            <span className="text-[#f5c400]">y herrería</span>
           </h1>
 
           <p className="text-lg sm:text-xl mb-10 text-gray-300 leading-relaxed">
@@ -99,7 +99,7 @@ export function Hero({ compact = false }: HeroProps) {
           <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={() => setShowForm(true)}
-              className="group bg-orange-600 hover:bg-orange-500 text-white px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 font-semibold shadow-lg hover:-translate-y-1"
+              className="group bg-[#f5c400] hover:bg-[#ddb000] text-white px-8 py-4 rounded-xl flex items-center justify-center gap-2 transition-all duration-200 font-semibold shadow-lg hover:-translate-y-1"
             >
               Solicitar cotización
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -115,7 +115,7 @@ export function Hero({ compact = false }: HeroProps) {
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2">
             {["Stock permanente", "Asesoramiento técnico", "Obras · Industria · Sector público"].map(item => (
               <span key={item} className="text-gray-400 text-sm flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-orange-500 inline-block" />
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f5c400] inline-block" />
                 {item}
               </span>
             ))}
@@ -149,14 +149,14 @@ export function Hero({ compact = false }: HeroProps) {
                     <input type={type} name={name} required={required}
                       value={formData[name as keyof typeof formData]} onChange={handleChange}
                       placeholder={placeholder}
-                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 text-base" />
+                      className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f5c400] text-base" />
                   </div>
                 ))}
                 <div className="relative">
                   <MessageSquare className="absolute left-3 top-3.5 text-gray-400" size={17} />
                   <textarea name="mensaje" required value={formData.mensaje} onChange={handleChange} rows={3}
                     placeholder="¿Qué materiales o productos necesitás? *"
-                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 resize-none text-base" />
+                    className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#f5c400] resize-none text-base" />
                 </div>
                 <button type="submit" className="w-full bg-[#25D366] hover:bg-[#1ebe5d] text-white py-4 rounded-xl font-semibold flex items-center justify-center gap-2 transition-all shadow-lg text-base">
                   <Send size={18} />Enviar por WhatsApp

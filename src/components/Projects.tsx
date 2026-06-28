@@ -184,7 +184,7 @@ export function Projects() {
           {/* Left - Title and Description */}
           <div className="flex flex-col justify-center">
             <div className="mb-4">
-              <span className="text-orange-600 uppercase tracking-wider">Nuestros Proyectos</span>
+              <span className="text-[#f5c400] uppercase tracking-wider">Nuestros Proyectos</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-6 text-gray-900">
               Soluciones metálicas que transforman industrias.
@@ -209,13 +209,13 @@ export function Projects() {
         </div>
 
         {/* Stats Banner */}
-        <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl p-8 md:p-12 shadow-xl mb-16">
+        <div className="bg-gradient-to-r from-[#f5c400] to-[#ddb000] rounded-2xl p-8 md:p-12 shadow-xl mb-16">
           <div className="grid sm:grid-cols-3 gap-8 text-white">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
                 <div className="text-5xl md:text-6xl mb-2">{stat.number}</div>
                 <div className="text-lg md:text-xl opacity-90">{stat.label}</div>
-                <p className="text-orange-100 text-sm mt-1">{stat.description}</p>
+                <p className="text-[#fff8d6] text-sm mt-1">{stat.description}</p>
               </div>
             ))}
           </div>
@@ -239,7 +239,7 @@ export function Projects() {
                 <p className="text-gray-600 mb-4">{project.description}</p>
 
                 {/* Technical Specs Badge */}
-                <div className="bg-orange-50 border-l-4 border-orange-600 p-3 mb-4 rounded">
+                <div className="bg-[#fffbea] border-l-4 border-[#f5c400] p-3 mb-4 rounded">
                   <p className="text-gray-900">{project.technicalSpecs}</p>
                 </div>
 
@@ -253,7 +253,7 @@ export function Projects() {
                     <span>{project.date}</span>
                   </div>
                 </div>
-                <button className="w-full bg-orange-600 hover:bg-orange-700 text-white py-2 rounded-lg transition-colors">
+                <button className="w-full bg-[#f5c400] hover:bg-[#ddb000] text-white py-2 rounded-lg transition-colors">
                   Ver Detalles del Proyecto
                 </button>
               </div>
@@ -262,7 +262,7 @@ export function Projects() {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 rounded-lg transition-colors">
+          <button className="bg-[#f5c400] hover:bg-[#ddb000] text-white px-8 py-3 rounded-lg transition-colors">
             Ver Todos los Proyectos
           </button>
         </div>
@@ -299,7 +299,7 @@ export function Projects() {
                   <div key={index}>
                     <button
                       onClick={() => setActiveHotspot(activeHotspot === index ? null : index)}
-                      className="absolute w-10 h-10 bg-orange-600 hover:bg-orange-700 text-white rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110"
+                      className="absolute w-10 h-10 bg-[#f5c400] hover:bg-[#ddb000] text-white rounded-full flex items-center justify-center shadow-lg transition-all transform hover:scale-110"
                       style={{ left: hotspot.x, top: hotspot.y }}
                     >
                       <Plus
@@ -311,14 +311,14 @@ export function Projects() {
                     {/* Hotspot Info Popup */}
                     {activeHotspot === index && (
                       <div
-                        className="absolute bg-white rounded-lg shadow-xl p-4 w-72 z-20 border-2 border-orange-600"
+                        className="absolute bg-white rounded-lg shadow-xl p-4 w-72 z-20 border-2 border-[#f5c400]"
                         style={{
                           left: `calc(${hotspot.x} + 45px)`,
                           top: hotspot.y,
                         }}
                       >
                         <div className="flex items-start gap-2 mb-2">
-                          <Info className="text-orange-600 flex-shrink-0" size={20} />
+                          <Info className="text-[#f5c400] flex-shrink-0" size={20} />
                           <h4 className="text-gray-900">{hotspot.title}</h4>
                         </div>
                         <p className="text-gray-600">{hotspot.description}</p>
@@ -331,14 +331,14 @@ export function Projects() {
               {/* Project Info */}
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
-                  <MapPin className="text-orange-600" size={24} />
+                  <MapPin className="text-[#f5c400]" size={24} />
                   <div>
                     <p className="text-gray-600">Ubicación</p>
                     <p className="text-gray-900">{selectedProject.location}</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
-                  <Calendar className="text-orange-600" size={24} />
+                  <Calendar className="text-[#f5c400]" size={24} />
                   <div>
                     <p className="text-gray-600">Año</p>
                     <p className="text-gray-900">{selectedProject.date}</p>
@@ -349,16 +349,16 @@ export function Projects() {
               {/* Detailed Information */}
               <div className="space-y-6">
                 <div className="grid md:grid-cols-3 gap-4">
-                  <div className="p-4 bg-orange-50 rounded-lg">
-                    <p className="text-orange-900 mb-1">Cliente</p>
+                  <div className="p-4 bg-[#fffbea] rounded-lg">
+                    <p className="text-[#6b5600] mb-1">Cliente</p>
                     <p className="text-gray-900">{selectedProject.details.client}</p>
                   </div>
-                  <div className="p-4 bg-orange-50 rounded-lg">
-                    <p className="text-orange-900 mb-1">Duración</p>
+                  <div className="p-4 bg-[#fffbea] rounded-lg">
+                    <p className="text-[#6b5600] mb-1">Duración</p>
                     <p className="text-gray-900">{selectedProject.details.duration}</p>
                   </div>
-                  <div className="p-4 bg-orange-50 rounded-lg">
-                    <p className="text-orange-900 mb-1">Equipo</p>
+                  <div className="p-4 bg-[#fffbea] rounded-lg">
+                    <p className="text-[#6b5600] mb-1">Equipo</p>
                     <p className="text-gray-900">{selectedProject.details.team}</p>
                   </div>
                 </div>
@@ -388,7 +388,7 @@ export function Projects() {
                 <div className="flex flex-wrap gap-3">
                   <a
                     href="mailto:proyectos@metalurgica.com"
-                    className="bg-orange-600 hover:bg-orange-700 px-6 py-3 rounded-lg transition-colors"
+                    className="bg-[#f5c400] hover:bg-[#ddb000] px-6 py-3 rounded-lg transition-colors"
                   >
                     Solicitar Cotización
                   </a>

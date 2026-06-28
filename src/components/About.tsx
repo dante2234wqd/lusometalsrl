@@ -32,7 +32,7 @@ export function About() {
           {/* Left side - Content */}
           <div>
             <div className="mb-6">
-              <span className="text-orange-600 uppercase tracking-wider">Sobre nosotros</span>
+              <span className="text-[#f5c400] uppercase tracking-wider">Sobre nosotros</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl mb-6 text-gray-900">
@@ -64,8 +64,8 @@ export function About() {
               <div className="space-y-4">
                 {strengths.map((strength, index) => (
                   <div key={index} className="flex gap-3 items-start">
-                    <div className="flex-shrink-0 w-9 h-9 bg-orange-100 rounded-lg flex items-center justify-center mt-0.5">
-                      {React.createElement(strength.icon, { size: 18, className: "text-orange-600" })}
+                    <div className="flex-shrink-0 w-9 h-9 bg-[#fff4b3] rounded-lg flex items-center justify-center mt-0.5">
+                      {React.createElement(strength.icon, { size: 18, className: "text-[#f5c400]" })}
                     </div>
                     <div className="flex-1">
                       <h4 className="text-gray-900 font-semibold text-sm">{strength.title}</h4>
@@ -97,7 +97,7 @@ export function About() {
             </div>
 
             {/* Orange badge */}
-            <div className="absolute -bottom-8 sm:-bottom-6 left-1/2 transform -translate-x-1/2 bg-orange-600 text-white px-8 py-6 rounded-lg shadow-xl">
+            <div className="absolute -bottom-8 sm:-bottom-6 left-1/2 transform -translate-x-1/2 bg-[#f5c400] text-gray-900 px-8 py-6 rounded-lg shadow-xl">
               <div className="text-center">
                 <div className="text-6xl sm:text-7xl font-bold">20+</div>
                 <div className="text-sm font-bold mt-1">Años en la industria</div>

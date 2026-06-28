@@ -154,7 +154,7 @@ function MeasureTable({ productName, measureCategories, onAddToCart }: {
                   {catImage && (
                     <div
                       onClick={e => { e.stopPropagation(); setLightbox({ src: catImage, alt: cat.label }) }}
-                      className="relative shrink-0 rounded-lg overflow-hidden border border-gray-200 hover:border-orange-400 transition-colors cursor-zoom-in group/thumb"
+                      className="relative shrink-0 rounded-lg overflow-hidden border border-gray-200 hover:border-[#f5c400] transition-colors cursor-zoom-in group/thumb"
                       style={{ width: 40, height: 40 }}
                       title="Ver imagen en grande"
                     >
@@ -164,7 +164,7 @@ function MeasureTable({ productName, measureCategories, onAddToCart }: {
                       </div>
                     </div>
                   )}
-                  <Table2 className="text-orange-500 shrink-0" size={16} />
+                  <Table2 className="text-[#f5c400] shrink-0" size={16} />
                   <span className="font-semibold text-gray-800 text-sm truncate">{cat.label}</span>
                   <span className="text-xs text-gray-400 bg-gray-200 px-2 py-0.5 rounded-full shrink-0 hidden sm:inline">{cat.rows.length}</span>
                 </div>
@@ -174,7 +174,7 @@ function MeasureTable({ productName, measureCategories, onAddToCart }: {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="bg-orange-50 border-b border-orange-100">
+                      <tr className="bg-[#fffbea] border-b border-[#fff4b3]">
                         <th className="w-10 px-2 py-2.5" />
                         <th className="text-left px-3 py-2.5 text-gray-700 font-semibold">Medida</th>
                         <th className="text-center px-3 py-2.5 text-gray-700 font-semibold whitespace-nowrap">Kg/m</th>
@@ -191,7 +191,7 @@ function MeasureTable({ productName, measureCategories, onAddToCart }: {
                               {catImage && (
                                 <div
                                   onClick={() => setLightbox({ src: catImage, alt: cat.label })}
-                                  className="w-8 h-8 rounded-md overflow-hidden border border-gray-200 hover:border-orange-400 cursor-zoom-in shrink-0 transition-colors"
+                                  className="w-8 h-8 rounded-md overflow-hidden border border-gray-200 hover:border-[#f5c400] cursor-zoom-in shrink-0 transition-colors"
                                   title="Ver imagen"
                                 >
                                   <img src={catImage} alt={cat.label} className="w-full h-full object-cover" />
@@ -203,7 +203,7 @@ function MeasureTable({ productName, measureCategories, onAddToCart }: {
                             <td className="px-3 py-2.5 text-center">
                               <button
                                 onClick={() => handleAdd(cat.label, row)}
-                                className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${added ? "bg-green-100 text-green-700" : "bg-orange-100 hover:bg-orange-600 text-orange-700 hover:text-white"}`}
+                                className={`inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${added ? "bg-green-100 text-green-700" : "bg-[#fff4b3] hover:bg-[#f5c400] text-[#6b5600] hover:text-gray-900"}`}
                               >
                                 {added ? <><CheckCircle size={12} />OK</> : <><Plus size={12} />Agregar</>}
                               </button>
@@ -245,9 +245,9 @@ function CartPanel({ items, onClose, onRemove, onChangeQty }: {
       <div className="absolute right-0 top-0 bottom-0 w-full max-w-sm sm:max-w-md bg-white shadow-2xl flex flex-col">
         <div className="flex items-center justify-between px-5 py-4 border-b shrink-0">
           <div className="flex items-center gap-3">
-            <ShoppingCart className="text-orange-600" size={20} />
+            <ShoppingCart className="text-[#f5c400]" size={20} />
             <span className="text-base font-bold text-gray-900">Mi pedido</span>
-            <span className="bg-orange-100 text-orange-700 text-xs font-bold px-2 py-0.5 rounded-full">{items.length}</span>
+            <span className="bg-[#fff4b3] text-[#6b5600] text-xs font-bold px-2 py-0.5 rounded-full">{items.length}</span>
           </div>
           <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded-full text-gray-500"><X size={18} /></button>
         </div>
@@ -259,7 +259,7 @@ function CartPanel({ items, onClose, onRemove, onChangeQty }: {
                 <div className="flex justify-between items-start mb-2">
                   <div className="flex-1 pr-2">
                     <p className="font-semibold text-gray-900 text-sm">{item.productName}</p>
-                    <p className="text-orange-600 text-xs mt-0.5">{item.categoryLabel}</p>
+                    <p className="text-[#f5c400] text-xs mt-0.5">{item.categoryLabel}</p>
                     <p className="text-gray-500 text-xs mt-1">{item.medida}</p>
                   </div>
                   <button onClick={() => onRemove(i)} className="text-gray-400 hover:text-red-500 p-1"><Trash2 size={14} /></button>
@@ -299,36 +299,36 @@ function DesktopSidebar({ currentProduct, onSelect }: { currentProduct: Product;
     <aside className="hidden lg:block w-72 xl:w-80 shrink-0 sticky top-24 self-start">
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="bg-gray-900 px-5 py-4">
-          <h2 className="text-white font-bold text-base flex items-center gap-2"><Package size={17} className="text-orange-400" />Productos</h2>
+          <h2 className="text-white font-bold text-base flex items-center gap-2"><Package size={17} className="text-[#f5c400]" />Productos</h2>
         </div>
         <div className="px-4 py-3 border-b border-gray-100">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
             <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar producto..."
-              className="w-full pl-8 pr-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-50" />
+              className="w-full pl-8 pr-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f5c400] bg-gray-50" />
           </div>
         </div>
         <div className="overflow-y-auto overscroll-contain" style={{ maxHeight: "calc(100vh - 200px)" }}>
           {grouped.map(cat => (
             <div key={cat.id} className="border-b border-gray-100 last:border-0">
               <button onClick={() => setOpenCat(openCat === cat.id ? null : cat.id)}
-                className={`w-full flex items-center justify-between px-5 py-3 text-left transition-colors hover:bg-gray-50 ${openCat === cat.id ? "bg-orange-50" : ""}`}>
-                <span className={`text-sm font-semibold ${openCat === cat.id ? "text-orange-600" : "text-gray-700"}`}>{cat.name}</span>
+                className={`w-full flex items-center justify-between px-5 py-3 text-left transition-colors hover:bg-gray-50 ${openCat === cat.id ? "bg-[#fffbea]" : ""}`}>
+                <span className={`text-sm font-semibold ${openCat === cat.id ? "text-[#f5c400]" : "text-gray-700"}`}>{cat.name}</span>
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-gray-400">{cat.items.length}</span>
-                  {openCat === cat.id ? <ChevronUp size={14} className="text-orange-500" /> : <ChevronRight size={14} className="text-gray-400" />}
+                  {openCat === cat.id ? <ChevronUp size={14} className="text-[#f5c400]" /> : <ChevronRight size={14} className="text-gray-400" />}
                 </div>
               </button>
               {openCat === cat.id && (
                 <div className="bg-gray-50 border-t border-gray-100">
                   {cat.items.map(p => (
                     <button key={p.id} onClick={() => onSelect(p)}
-                      className={`w-full flex items-center gap-3 px-5 py-2.5 text-left transition-all hover:bg-orange-50 group ${currentProduct.id === p.id ? "bg-orange-100 border-l-2 border-orange-500" : "border-l-2 border-transparent"}`}>
+                      className={`w-full flex items-center gap-3 px-5 py-2.5 text-left transition-all hover:bg-[#fffbea] group ${currentProduct.id === p.id ? "bg-[#fff4b3] border-l-2 border-[#f5c400]" : "border-l-2 border-transparent"}`}>
                       <img src={p.image} alt={p.name} className="w-9 h-9 object-cover rounded-lg shrink-0 border border-gray-200" />
                       <div className="flex-1 min-w-0">
-                        <p className={`text-xs font-medium truncate ${currentProduct.id === p.id ? "text-orange-700" : "text-gray-700 group-hover:text-orange-600"}`}>{p.name}</p>
+                        <p className={`text-xs font-medium truncate ${currentProduct.id === p.id ? "text-[#6b5600]" : "text-gray-700 group-hover:text-[#f5c400]"}`}>{p.name}</p>
                       </div>
-                      <ChevronRight size={13} className={`shrink-0 ${currentProduct.id === p.id ? "text-orange-500" : "text-gray-300"}`} />
+                      <ChevronRight size={13} className={`shrink-0 ${currentProduct.id === p.id ? "text-[#f5c400]" : "text-gray-300"}`} />
                     </button>
                   ))}
                 </div>
@@ -353,27 +353,27 @@ function MobileProductList({ currentProduct, onSelect }: { currentProduct: Produ
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} />
           <input type="text" value={search} onChange={e => setSearch(e.target.value)} placeholder="Buscar producto..."
-            className="w-full pl-8 pr-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 bg-gray-50" />
+            className="w-full pl-8 pr-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#f5c400] bg-gray-50" />
         </div>
       </div>
       {grouped.map(cat => (
         <div key={cat.id} className="border-b border-gray-100 last:border-0">
           <button onClick={() => setOpenCat(openCat === cat.id ? null : cat.id)}
-            className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${openCat === cat.id ? "bg-orange-50" : "hover:bg-gray-50"}`}>
-            <span className={`text-sm font-semibold ${openCat === cat.id ? "text-orange-600" : "text-gray-700"}`}>{cat.name}</span>
+            className={`w-full flex items-center justify-between px-4 py-3 text-left transition-colors ${openCat === cat.id ? "bg-[#fffbea]" : "hover:bg-gray-50"}`}>
+            <span className={`text-sm font-semibold ${openCat === cat.id ? "text-[#f5c400]" : "text-gray-700"}`}>{cat.name}</span>
             <div className="flex items-center gap-2">
               <span className="text-xs text-gray-400">{cat.items.length}</span>
-              {openCat === cat.id ? <ChevronUp size={14} className="text-orange-500" /> : <ChevronRight size={14} className="text-gray-400" />}
+              {openCat === cat.id ? <ChevronUp size={14} className="text-[#f5c400]" /> : <ChevronRight size={14} className="text-gray-400" />}
             </div>
           </button>
           {openCat === cat.id && (
             <div className="bg-gray-50 border-t border-gray-100">
               {cat.items.map(p => (
                 <button key={p.id} onClick={() => onSelect(p)}
-                  className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all hover:bg-orange-50 ${currentProduct.id === p.id ? "bg-orange-100 border-l-2 border-orange-500" : "border-l-2 border-transparent"}`}>
+                  className={`w-full flex items-center gap-3 px-4 py-2.5 text-left transition-all hover:bg-[#fffbea] ${currentProduct.id === p.id ? "bg-[#fff4b3] border-l-2 border-[#f5c400]" : "border-l-2 border-transparent"}`}>
                   <img src={p.image} alt={p.name} className="w-9 h-9 object-cover rounded-lg shrink-0 border border-gray-200" />
-                  <p className={`text-xs font-medium truncate flex-1 ${currentProduct.id === p.id ? "text-orange-700" : "text-gray-700"}`}>{p.name}</p>
-                  <ChevronRight size={13} className={`shrink-0 ${currentProduct.id === p.id ? "text-orange-500" : "text-gray-300"}`} />
+                  <p className={`text-xs font-medium truncate flex-1 ${currentProduct.id === p.id ? "text-[#6b5600]" : "text-gray-700"}`}>{p.name}</p>
+                  <ChevronRight size={13} className={`shrink-0 ${currentProduct.id === p.id ? "text-[#f5c400]" : "text-gray-300"}`} />
                 </button>
               ))}
             </div>
@@ -410,8 +410,9 @@ function WhatsAppFAB() {
         Consultá tu presupuesto
       </span>
       {/* Ícono WhatsApp — archivo SVG del proyecto */}
-      <div className="w-14 h-14 rounded-full shadow-xl flex items-center justify-center bg-[#25D366] hover:bg-[#1ebe5d] transition-colors shrink-0">
-        <img src="/icono_whatsapp.svg" alt="WhatsApp" className="w-8 h-8" />
+      <div className="relative w-14 h-14 rounded-full shadow-xl flex items-center justify-center shrink-0 animate-pulse transition-transform hover:scale-110 hover:animate-none">
+        <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" aria-hidden="true" />
+        <img src="/boton_whatsapp.svg" alt="WhatsApp" className="relative w-14 h-14" />
       </div>
     </a>
   )
@@ -446,11 +447,11 @@ export function ProductDetailPage({
 
             <div className="lg:hidden flex items-center justify-between mb-3 bg-gray-900 rounded-xl px-4 py-3">
               <div className="flex items-center gap-2 text-white min-w-0">
-                <Package size={15} className="text-orange-400 shrink-0" />
+                <Package size={15} className="text-[#f5c400] shrink-0" />
                 <span className="font-semibold text-sm truncate">{product.name}</span>
               </div>
               <button onClick={() => setMobileListOpen(v => !v)}
-                className={`flex items-center gap-1.5 text-sm font-medium transition-colors shrink-0 ml-3 ${mobileListOpen ? "text-orange-400" : "text-gray-300 hover:text-white"}`}>
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors shrink-0 ml-3 ${mobileListOpen ? "text-[#f5c400]" : "text-gray-300 hover:text-white"}`}>
                 <span>Ver productos</span><SlidersHorizontal size={15} />
               </button>
             </div>
@@ -469,7 +470,7 @@ export function ProductDetailPage({
                 <ZoomIn size={18} className="text-white" />
               </div>
               <div className="absolute bottom-0 left-0 right-0 px-6 sm:px-8 pb-6 sm:pb-8">
-                <span className="text-orange-400 text-xs font-bold tracking-widest uppercase">
+                <span className="text-[#f5c400] text-xs font-bold tracking-widest uppercase">
                   {categories.find(c => c.id === product.category)?.name}
                 </span>
                 <h1 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white mt-1 leading-tight">{product.name}</h1>
@@ -483,7 +484,7 @@ export function ProductDetailPage({
                   <h2 className="text-xs font-bold text-gray-400 uppercase tracking-widest mb-3">Aplicaciones</h2>
                   <div className="flex flex-wrap gap-2">
                     {product.details.applications.map((app, i) => (
-                      <span key={i} className="bg-orange-100 text-orange-800 px-3 py-1.5 rounded-full text-sm font-semibold">{app}</span>
+                      <span key={i} className="bg-[#fff4b3] text-[#6b5600] px-3 py-1.5 rounded-full text-sm font-semibold">{app}</span>
                     ))}
                   </div>
                 </div>
@@ -495,7 +496,7 @@ export function ProductDetailPage({
                 <button onClick={() => setTableOpen(!tableOpen)}
                   className="w-full flex items-center justify-between bg-gray-900 hover:bg-gray-800 text-white px-6 py-4 sm:py-5 rounded-xl transition-all mb-5">
                   <div className="flex items-center gap-3 sm:gap-4">
-                    <Table2 size={20} className="text-orange-400" />
+                    <Table2 size={20} className="text-[#f5c400]" />
                     <div className="text-left">
                       <p className="font-bold text-base sm:text-lg leading-tight">Ver tabla de medidas</p>
                       <p className="text-gray-400 text-xs sm:text-sm mt-0.5">
@@ -525,7 +526,7 @@ export function ProductDetailPage({
           className="fixed bottom-24 right-4 sm:bottom-24 sm:right-6 z-40 bg-gray-900 text-white rounded-full px-4 sm:px-5 py-2.5 sm:py-3 flex items-center gap-2 sm:gap-3 shadow-2xl hover:bg-gray-800 transition-all border border-white/10">
           <ShoppingCart size={18} />
           <span className="font-semibold text-sm hidden sm:inline">Ver pedido</span>
-          <span className="bg-orange-600 text-white text-xs font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center animate-pulse">{cartItems.length}</span>
+          <span className="bg-[#f5c400] text-gray-900 text-xs font-bold rounded-full w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center animate-pulse">{cartItems.length}</span>
         </button>
       )}
 

@@ -16,13 +16,13 @@ export function Footer({ onNavigate }: FooterProps) {
             <h3 className="text-xl text-white mb-4">Lusometal SRL</h3>
             <p className="mb-4">Soluciones integrales en metalurgia con más de 20 años de experiencia en el mercado.</p>
             <div className="flex gap-4">
-              <a href="#" className="hover:text-orange-500 transition-colors">
+              <a href="#" className="hover:text-[#f5c400] transition-colors">
                 <Facebook size={24} />
               </a>
-              <a href="#" className="hover:text-orange-500 transition-colors">
+              <a href="#" className="hover:text-[#f5c400] transition-colors">
                 <Instagram size={24} />
               </a>
-              <a href="#" className="hover:text-orange-500 transition-colors">
+              <a href="#" className="hover:text-[#f5c400] transition-colors">
                 <Linkedin size={24} />
               </a>
             </div>
@@ -33,17 +33,17 @@ export function Footer({ onNavigate }: FooterProps) {
             <h4 className="text-white mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
               <li>
-                <button onClick={() => onNavigate("home")} className="hover:text-orange-500 transition-colors">
+                <button onClick={() => onNavigate("home")} className="hover:text-[#f5c400] transition-colors">
                   Inicio
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate("sobre-nosotros")} className="hover:text-orange-500 transition-colors">
+                <button onClick={() => onNavigate("sobre-nosotros")} className="hover:text-[#f5c400] transition-colors">
                   Sobre Nosotros
                 </button>
               </li>
               <li>
-                <button onClick={() => onNavigate("consultar")} className="hover:text-orange-500 transition-colors">
+                <button onClick={() => onNavigate("consultar")} className="hover:text-[#f5c400] transition-colors">
                   Productos
                 </button>
               </li>
@@ -72,7 +72,7 @@ export function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-center gap-2">
                 <Phone size={20} className="flex-shrink-0" />
-                <a href="tel:+5491128960096" className="hover:text-orange-500 transition-colors">
+                <a href="tel:+5491128960096" className="hover:text-[#f5c400] transition-colors">
                   +54 9 11 2896-0096
                 </a>
               </li>
@@ -88,7 +88,7 @@ export function Footer({ onNavigate }: FooterProps) {
               href="https://www.staerstudio.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-orange-400 transition-colors underline underline-offset-2"
+              className="hover:text-[#f5c400] transition-colors underline underline-offset-2"
             >
               STAER STUDIO
             </a>
