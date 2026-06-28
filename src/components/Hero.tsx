@@ -3,7 +3,7 @@
 import { ArrowRight, X, Send, User, Phone, Building2, MessageSquare } from "lucide-react"
 import { useState, useEffect, useRef } from "react"
 
-const WA = "5491128960096"
+const WA = "541130747014"
 
 interface HeroProps {
   compact?: boolean

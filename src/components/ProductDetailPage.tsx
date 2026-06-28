@@ -9,7 +9,7 @@ import {
 import type { Product, CartItem } from "../App"
 import { products, categories } from "./Products"
 
-const WA = "5491128960096"
+const WA = "541130747014"
 
 const CATEGORY_IMAGES: Record<string, string> = {
   "Bisagras y Pivotes": "/images/Bisagra_forjadas_11zon.webp",

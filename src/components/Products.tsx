@@ -32,7 +32,7 @@ export const categories = [
   { id: "accesorios", name: "Ferretería y Accesorios" },
 ]
 
-const WA = "5491128960096"
+const WA = "541130747014"
 
 export const products: Product[] = [
   // ── TUBOS / CAÑOS ──
