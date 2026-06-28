@@ -298,8 +298,8 @@ function DesktopSidebar({ currentProduct, onSelect }: { currentProduct: Product;
   return (
     <aside className="hidden lg:block w-72 xl:w-80 shrink-0 sticky top-24 self-start">
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="bg-gray-900 px-5 py-4">
-          <h2 className="text-white font-bold text-base flex items-center gap-2"><Package size={17} className="text-[#f5c400]" />Productos</h2>
+        <div className="bg-gray-900 px-5 py-5 flex items-center justify-center">
+          <img src="/logotipo_web.svg" alt="Luso Metal SRL" className="h-16 w-full max-w-[240px] object-contain" />
         </div>
         <div className="px-4 py-3 border-b border-gray-100">
           <div className="relative">
