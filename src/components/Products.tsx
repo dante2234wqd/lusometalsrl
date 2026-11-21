@@ -206,7 +206,7 @@ export const products: Product[] = [
   {
     id: 25, name: "Discos de Corte, Desbaste y Flaps", category: "accesorios",
     description: "Discos abrasivos Tyrolit para amoladora: corte, desbaste y flaps",
-    image: "/images/DISCO TYROLIT 114x1,6x22,2 ECOBASIC_11zon.webp",
+    image: "/images/DISCO TYROLIT 114x1%2C6x22%2C2 ECOBASIC_11zon.webp",
     details: { fullDescription: "Línea completa de discos abrasivos Tyrolit para amoladora angular.", dimensions: "Diámetros 114mm a 230mm", materials: "Abrasivo industrial Tyrolit", finishes: "Listo para usar", weight: "Variable", specifications: ["Corte, desbaste y flap", "Para metal e inoxidable"], applications: ["Corte de metales", "Desbaste", "Acabado superficial", "Herrería"] },
     measureCategories: measures_ferreteria.filter(c => c.label === "Discos de Corte" || c.label === "Discos de Desbaste" || c.label === "Discos Flaps"),
   },
@@ -220,7 +220,7 @@ export const products: Product[] = [
   {
     id: 27, name: "Tornillos, Tarugos y Varillas Roscadas", category: "accesorios",
     description: "Fijaciones metálicas: tirafondos, tornillos, tarugos y varillas roscadas zincadas",
-    image: "/images/T1 Tornillo 8x1 (4,2x25.4)Flangeado punta mecha zinc bl_11zon.webp",
+    image: "/images/T1 Tornillo 8x1 (4%2C2x25.4)Flangeado punta mecha zinc bl_11zon.webp",
     details: { fullDescription: "Amplia línea de tornillos, tarugos y varillas roscadas zincadas.", dimensions: "Varios diámetros y largos", materials: "Acero / Zincado", finishes: "Zincado / Fosfatado", weight: "Variable", specifications: ["Tirafondos y tornillos para chapa", "Varillas roscadas zincadas"], applications: ["Fijaciones en obra", "Carpintería metálica", "Construcción en seco"] },
     measureCategories: measures_ferreteria.filter(c => c.label === "Tornillos y Tarugos" || c.label === "Varillas Roscadas"),
   },
