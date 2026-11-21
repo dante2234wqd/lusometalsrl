@@ -27,12 +27,10 @@ export function Navigation({ currentPage = "home", onNavigate = () => {} }: Navi
     <nav className="bg-slate-900 text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <div className="flex-shrink-0">
             <h1 className="text-xl text-[#f5c400]">MetalTech</h1>
           </div>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <button
@@ -49,7 +47,6 @@ export function Navigation({ currentPage = "home", onNavigate = () => {} }: Navi
             ))}
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -60,7 +57,6 @@ export function Navigation({ currentPage = "home", onNavigate = () => {} }: Navi
           </div>
         </div>
 
-        {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden pb-4">
             {navItems.map((item) => (

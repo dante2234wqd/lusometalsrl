@@ -384,7 +384,6 @@ function MobileProductList({ currentProduct, onSelect }: { currentProduct: Produ
   )
 }
 
-// Botón flotante de WhatsApp con ícono SVG y pastilla de texto
 function WhatsAppFAB() {
   return (
     <a
@@ -394,7 +393,6 @@ function WhatsAppFAB() {
       className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center gap-0 group"
       aria-label="Consultá tu presupuesto por WhatsApp"
     >
-      {/* Pastilla de texto — aparece al hover en desktop, siempre visible en mobile */}
       <span className="
         mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg
         whitespace-nowrap
@@ -405,11 +403,9 @@ function WhatsAppFAB() {
       ">
         Consultá tu presupuesto
       </span>
-      {/* Pastilla siempre visible en mobile */}
       <span className="sm:hidden mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap">
         Consultá tu presupuesto
       </span>
-      {/* Ícono WhatsApp — archivo SVG del proyecto */}
       <div className="relative w-14 h-14 rounded-full shadow-xl flex items-center justify-center shrink-0 animate-pulse transition-transform hover:scale-110 hover:animate-none">
         <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" aria-hidden="true" />
         <img src="/boton_whatsapp.svg" alt="WhatsApp" className="relative w-14 h-14" />
@@ -532,7 +528,6 @@ export function ProductDetailPage({
 
       {cartOpen && <CartPanel items={cartItems} onClose={() => setCartOpen(false)} onRemove={onRemoveFromCart} onChangeQty={onChangeQty} />}
 
-      {/* Botón flotante WhatsApp */}
       <WhatsAppFAB />
     </div>
   )

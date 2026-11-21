@@ -11,7 +11,6 @@ export function Footer({ onNavigate }: FooterProps) {
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Company Info */}
           <div>
             <h3 className="text-xl text-white mb-4">Lusometal SRL</h3>
             <p className="mb-4">Soluciones integrales en metalurgia con más de 20 años de experiencia en el mercado.</p>
@@ -28,7 +27,6 @@ export function Footer({ onNavigate }: FooterProps) {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-white mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
@@ -50,7 +48,6 @@ export function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="text-white mb-4">Servicios</h4>
             <ul className="space-y-2">
@@ -62,7 +59,6 @@ export function Footer({ onNavigate }: FooterProps) {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="text-white mb-4">Contacto</h4>
             <ul className="space-y-3">

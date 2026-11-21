@@ -179,9 +179,7 @@ export function Projects() {
   return (
     <div className="py-16 sm:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section with Image */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
-          {/* Left - Title and Description */}
           <div className="flex flex-col justify-center">
             <div className="mb-4">
               <span className="text-[#f5c400] uppercase tracking-wider">Nuestros Proyectos</span>
@@ -195,7 +193,6 @@ export function Projects() {
             </p>
           </div>
 
-          {/* Right - Image with Overlay */}
           <div className="relative">
             <img
               src="/images/mas-de-250-proyectos.jpeg"
@@ -208,7 +205,6 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Stats Banner */}
         <div className="bg-gradient-to-r from-[#f5c400] to-[#ddb000] rounded-2xl p-8 md:p-12 shadow-xl mb-16">
           <div className="grid sm:grid-cols-3 gap-8 text-white">
             {stats.map((stat, index) => (
@@ -221,7 +217,6 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
             <div
@@ -238,7 +233,6 @@ export function Projects() {
                 <h3 className="text-xl mb-3 text-gray-900">{project.title}</h3>
                 <p className="text-gray-600 mb-4">{project.description}</p>
 
-                {/* Technical Specs Badge */}
                 <div className="bg-[#fffbea] border-l-4 border-[#f5c400] p-3 mb-4 rounded">
                   <p className="text-gray-900">{project.technicalSpecs}</p>
                 </div>
@@ -268,7 +262,6 @@ export function Projects() {
         </div>
       </div>
 
-      {/* Project Detail Modal */}
       {selectedProject && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4 overflow-y-auto">
           <div className="bg-white rounded-lg max-w-6xl w-full max-h-[90vh] overflow-y-auto">
@@ -286,7 +279,6 @@ export function Projects() {
             </div>
 
             <div className="p-6">
-              {/* Image with Hotspots */}
               <div className="mb-8 relative">
                 <ImageWithFallback
                   src={selectedProject.image || "/placeholder.svg"}
@@ -294,7 +286,6 @@ export function Projects() {
                   className="w-full h-[500px] object-cover rounded-lg"
                 />
 
-                {/* Hotspot Buttons */}
                 {selectedProject.hotspots.map((hotspot, index) => (
                   <div key={index}>
                     <button
@@ -308,7 +299,6 @@ export function Projects() {
                       />
                     </button>
 
-                    {/* Hotspot Info Popup */}
                     {activeHotspot === index && (
                       <div
                         className="absolute bg-white rounded-lg shadow-xl p-4 w-72 z-20 border-2 border-[#f5c400]"
@@ -328,7 +318,6 @@ export function Projects() {
                 ))}
               </div>
 
-              {/* Project Info */}
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-lg">
                   <MapPin className="text-[#f5c400]" size={24} />
@@ -346,7 +335,6 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* Detailed Information */}
               <div className="space-y-6">
                 <div className="grid md:grid-cols-3 gap-4">
                   <div className="p-4 bg-[#fffbea] rounded-lg">
@@ -381,7 +369,6 @@ export function Projects() {
                 </div>
               </div>
 
-              {/* CTA */}
               <div className="mt-8 bg-gray-900 text-white p-6 rounded-lg">
                 <h3 className="text-xl mb-2 text-white">¿Tienes un proyecto similar?</h3>
                 <p className="text-gray-300 mb-4">Contáctanos para recibir una cotización personalizada</p>

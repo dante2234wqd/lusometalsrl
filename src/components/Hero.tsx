@@ -55,14 +55,12 @@ export function Hero({ compact = false }: HeroProps) {
         compact ? "min-h-[60vh]" : "min-h-[90vh]"
       }`}
     >
-      {/* Background — desktop */}
       <div className="absolute inset-0">
         <img
           src="/images/background_hero.webp"
           alt="Materiales siderometalúrgicos Lusometal"
           className="hidden sm:block w-full h-full object-cover opacity-40"
         />
-        {/* Background — mobile */}
         <img
           src="/images/background_mobile.webp"
           alt="Materiales siderometalúrgicos Lusometal"
@@ -71,7 +69,6 @@ export function Hero({ compact = false }: HeroProps) {
         <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/60 to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 w-full">
         <div className={`max-w-2xl transition-all duration-1000 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <p className="text-[#f5c400] text-sm font-semibold tracking-widest uppercase mb-5">
@@ -123,7 +120,6 @@ export function Hero({ compact = false }: HeroProps) {
         </div>
       </div>
 
-      {/* Modal */}
       {showForm && (
         <div className="fixed inset-0 z-[60] flex items-center justify-center p-4">
           <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setShowForm(false)} />

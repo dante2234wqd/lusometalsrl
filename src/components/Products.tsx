@@ -35,7 +35,6 @@ export const categories = [
 const WA = "541130747014"
 
 export const products: Product[] = [
-  // ── TUBOS / CAÑOS ──
   {
     id: 1, name: "Caños Estructurales", category: "tubos",
     description: "Caños cuadrados, rectangulares y redondos de acero para estructuras metálicas livianas y medianas",
@@ -50,7 +49,6 @@ export const products: Product[] = [
     details: { fullDescription: "Caños redondos de uso mecánico para instalaciones de fluidos, gas e industria.", dimensions: "Diámetros nominales desde 1/2\" | Largo comercial: barras", materials: "Acero | Para uso mecánico e instalaciones", finishes: "Negro", weight: "Variable según diámetro", specifications: ["Medidas en pulgadas y mm", "Stock permanente"], applications: ["Instalaciones", "Mecánica industrial", "Construcción", "Plomería"] },
     measureCategories: measures_canos.filter(c => c.label.includes("Mecánico")),
   },
-  // ── PERFILES DE CHAPA ──
   {
     id: 3, name: "Perfiles C Galvanizados", category: "perfiles-chapa",
     description: "Perfiles C galvanizados para estructuras de techos y entrepisos livianos",
@@ -72,7 +70,6 @@ export const products: Product[] = [
     details: { fullDescription: "Perfiles U conformados en chapa para aplicaciones de guías, canales, estructuras livianas y montaje.", dimensions: "Varios anchos y espesores | Largo: 12 metros", materials: "Chapa negra LC", finishes: "Negro", weight: "Variable según sección", specifications: ["Medidas normalizadas", "Stock permanente"], applications: ["Guías", "Canales", "Estructuras livianas", "Montaje industrial"] },
     measureCategories: measures_perfiles_de_chapa.filter(c => c.label.includes("Perfiles U")),
   },
-  // ── PERFILES ESTRUCTURALES ──
   {
     id: 6, name: "IPN - Perfil Doble T", category: "estructurales",
     description: "Perfil laminado en caliente de doble T para vigas y columnas de gran carga",
@@ -108,7 +105,6 @@ export const products: Product[] = [
     details: { fullDescription: "Perfiles en forma de T para soportes, estantes, rieles y estructuras metálicas.", dimensions: "Varios anchos y espesores", materials: "Acero al carbono | Laminado", finishes: "Natural", weight: "Variable", specifications: ["Medidas en pulgadas y mm", "Stock disponible"], applications: ["Soportes", "Estantes", "Rieles", "Estructuras"] },
     measureCategories: measures_perfiles.filter(c => c.label === "Perfiles T"),
   },
-  // ── CHAPAS DE TECHO ──
   {
     id: 11, name: "Chapas de Techo Cincalum", category: "chapas-techo",
     description: "Chapas cincalum acanaladas y trapezoidales para techos industriales y rurales",
@@ -144,7 +140,6 @@ export const products: Product[] = [
     details: { fullDescription: "Espumas metalizadas, burletes y accesorios para la correcta instalación y aislación de techos metálicos.", dimensions: "Varios formatos y medidas", materials: "Espuma / Aluminio / Acero", finishes: "Metalizado / Natural", weight: "Liviano", specifications: ["Aislación térmica y acústica", "Accesorios de fijación"], applications: ["Aislación de techos", "Fijación de chapas", "Impermeabilización"] },
     measureCategories: measures_chapas_de_techo.filter(c => c.label.includes("Aislantes")),
   },
-  // ── CHAPAS LISAS ──
   {
     id: 16, name: "Chapas Laminadas en Caliente y Frío", category: "chapas-lisas",
     description: "Chapas planas de acero laminadas en caliente o frío para fabricación industrial",
@@ -166,7 +161,6 @@ export const products: Product[] = [
     details: { fullDescription: "Chapas con relieve antideslizante o estampado para pisos industriales y plataformas.", dimensions: "Espesores 0.9mm a 4.7mm | Formato estándar", materials: "Acero | Relieve antideslizante o estampado", finishes: "Natural", weight: "Variable según espesor", specifications: ["Antideslizante y estampada", "Varios espesores"], applications: ["Pisos industriales", "Rampas", "Escaleras", "Plataformas"] },
     measureCategories: measures_chapas_lisas.filter(c => c.label === "Antideslizantes" || c.label === "Estampadas"),
   },
-  // ── BARRAS Y REDONDOS ──
   {
     id: 19, name: "Redondos y Cuadrados Laminados", category: "barras",
     description: "Barras redondas lisas, aletadas y cuadradas laminadas para herrería y construcción",
@@ -174,7 +168,6 @@ export const products: Product[] = [
     details: { fullDescription: "Barras de sección redonda (lisas, aletadas DN, herrero) y cuadradas laminadas.", dimensions: "Diámetros desde 6mm | Largo por barra", materials: "Acero al carbono | Macizo", finishes: "Laminado natural", weight: "Variable según diámetro", specifications: ["Redondos lisos, aletados y herrero", "Cuadrados laminados", "Corte sin cargo"], applications: ["Estructuras", "Rejas", "Ejes", "Hormigón armado"] },
     measureCategories: measures_redondos_y_cuadrados,
   },
-  // ── PORTONES Y PUERTAS ──
   {
     id: 20, name: "Carros y Rieles para Portones", category: "portones",
     description: "Sistemas de carros y rieles para portones corredizos industriales y residenciales",
@@ -189,7 +182,6 @@ export const products: Product[] = [
     details: { fullDescription: "Ruedas de polipropileno y acero, roldanas, topes, receptores y estabilizadores.", dimensions: "Ruedas desde 100mm | Varios modelos", materials: "Polipropileno / Acero", finishes: "Natural / Pintado", weight: "Variable", specifications: ["Ruedas fijas y giratorias", "Topes y receptores incluidos"], applications: ["Portones", "Puertas corredizas", "Accesos industriales"] },
     measureCategories: measures_insumos_p_portones_y_puertas.filter(c => c.label.includes("Ruedas") || c.label.includes("Topes")),
   },
-  // ── CERRAMIENTOS Y MALLAS ──
   {
     id: 22, name: "Mallas Electrosoldadas", category: "cerramientos",
     description: "Mallas de alambre electrosoldadas para cercos, cerramientos y hormigón",
@@ -204,7 +196,6 @@ export const products: Product[] = [
     details: { fullDescription: "Chapa de acero cortada y estirada sin soldaduras con patrón romboidal.", dimensions: "Hojas 1000 x 3000mm | Varios espesores", materials: "Acero | Proceso de corte y estirado", finishes: "Natural / Galvanizado", weight: "Variable según espesor", specifications: ["Sin soldaduras", "Varias aperturas"], applications: ["Rejas decorativas", "Pisos industriales", "Cerramientos", "Protecciones"] },
     measureCategories: measures_mallas_y_metal_desplegado.filter(c => c.label === "Metal Desplegado"),
   },
-  // ── FERRETERÍA Y ACCESORIOS ──
   {
     id: 24, name: "Bisagras, Pivotes y Cerraduras", category: "accesorios",
     description: "Herrajes para portones, rejas y puertas: bisagras forjadas, pivotes y cerraduras",
@@ -375,7 +366,6 @@ function CartPanel({ items, onClose, onRemove, onChangeQty }: {
   )
 }
 
-// Botón flotante de WhatsApp con ícono SVG y pastilla de texto
 function WhatsAppFAB() {
   return (
     <a
@@ -385,15 +375,12 @@ function WhatsAppFAB() {
       className="fixed bottom-6 right-4 sm:right-6 z-50 flex items-center group"
       aria-label="Consultá tu presupuesto por WhatsApp"
     >
-      {/* Pastilla visible en mobile siempre */}
       <span className="sm:hidden mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap">
         Consultá tu presupuesto
       </span>
-      {/* Pastilla en desktop solo al hover */}
       <span className="hidden sm:block mr-2 bg-white text-gray-800 text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap opacity-0 translate-x-2 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200">
         Consultá tu presupuesto
       </span>
-      {/* Ícono WhatsApp — archivo SVG del proyecto */}
       <div className="relative w-14 h-14 rounded-full shadow-xl flex items-center justify-center shrink-0 animate-pulse transition-transform hover:scale-110 hover:animate-none">
         <span className="absolute inset-0 rounded-full bg-[#25D366]/30 animate-ping" aria-hidden="true" />
         <img src="/boton_whatsapp.svg" alt="WhatsApp" className="relative w-14 h-14" />
@@ -516,7 +503,6 @@ export function Products({ cartItems, onSelectProduct, onAddToCart, onRemoveFrom
       <CartButton count={cartItems.length} onClick={() => setCartOpen(true)} />
       {cartOpen && <CartPanel items={cartItems} onClose={() => setCartOpen(false)} onRemove={onRemoveFromCart} onChangeQty={onChangeQty} />}
 
-      {/* Botón flotante WhatsApp */}
       <WhatsAppFAB />
     </div>
   )

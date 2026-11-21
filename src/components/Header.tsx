@@ -89,7 +89,6 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
 
   return (
     <>
-      {/* Desktop */}
       <header
         ref={headerRef}
         className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 hidden md:block transition-all duration-300 ${
@@ -112,7 +111,6 @@ export function Header({ activeSection, onNavigate }: HeaderProps) {
         </div>
       </header>
 
-      {/* Mobile */}
       <header
         className={`md:hidden fixed top-3 left-3 right-3 z-50 transition-all duration-300 ${
           visible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-8 pointer-events-none"

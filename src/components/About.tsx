@@ -29,7 +29,6 @@ export function About() {
     <div className="py-16 sm:py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center mb-16">
-          {/* Left side - Content */}
           <div>
             <div className="mb-6">
               <span className="text-[#f5c400] uppercase tracking-wider">Sobre nosotros</span>
@@ -77,7 +76,6 @@ export function About() {
             </div>
           </div>
 
-          {/* Right side — updated images */}
           <div className="relative mt-8 lg:mt-0 w-full">
             <div className="grid grid-cols-2 gap-4">
               <div>
@@ -96,7 +94,6 @@ export function About() {
               </div>
             </div>
 
-            {/* Orange badge */}
             <div className="absolute -bottom-8 sm:-bottom-6 left-1/2 transform -translate-x-1/2 bg-[#f5c400] text-gray-900 px-8 py-6 rounded-lg shadow-xl">
               <div className="text-center">
                 <div className="text-6xl sm:text-7xl font-bold">20+</div>
